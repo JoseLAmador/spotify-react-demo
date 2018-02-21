@@ -1,10 +1,14 @@
 import React from 'react';
+import TrackCard from "./TrackCard";
 
-const TracksList = ({props}) => {
+const TracksList = ({results, playSong}) => {
     return (
-        <div>
-            Lista de los resultados de la busqueda
+        <div className="results">
+            {results.map((song,key)=>{
+                return <TrackCard key={key} {...song} playSong={playSong} fullSong={song}/>
+            })}
         </div>
+
     )
 };
 
